@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-int func( int n, int massa[], int i = 0, long int sum_1 = 0, long int sum_2 = 0)
+int func( int n, int massa[], int i = 0, int sum_1 = 0, int sum_2 = 0)
 {
    if (i == n)
       return abs( sum_1 - sum_2 );
