@@ -18,7 +18,8 @@ int func( int n, int massa[], int i = 0, int sum_1 = 0, int sum_2 = 0)
 int main()
 {
    int n;
-   cin >> n; int plates[n];
+   cin >> n;
+   int plates[n];
    for (int i = 0; i < n; ++i){
       cin >> plates[i];
    }
