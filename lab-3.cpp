@@ -2,28 +2,26 @@
 #include <cmath>
 using namespace std;
 
-long int min_difference = 100000000+1; 
-int n;
-int a[] = {};
-int f(long int petya,long int masha, int i) {
- if (i == n) {
-  if (abs(petya - masha) < min_difference) {
-   min_difference = abs(petya - masha);
-  }
- }
- else {
-  f(petya + a[i], masha, i + 1);
-  f(petya, masha + a[i], i + 1);
- }
- return 0;
+int func( const int n, int massa[], int i = 0, int sum_1 = 0, int sum_2 = 0)
+{
+   if (i == n)
+      return abs( sum_1 - sum_2 );
+   else
+      {
+         return min(
+            func(n, massa, i + 1, sum_1 + massa[i], sum_2 ),
+            func(n, massa, i + 1, sum_1, sum_2 + massa[i] )
+            );
+      }
+      
 }
 
-int main() {
- cin >> n;
- for (int i = 0; i < n; i++) {
-  cin >> a[i];
- }
- f(0, 0, 0);
- cout << min_difference;
- return 0;
+int main()
+{
+   /* const */int n; cin >> n; int plates[n]; //ввели массив
+   for (int i = 0; i < n; ++i){
+      cin >> plates[i];
+   }
+   cout << func(n, plates);
+   return 0;
 }
