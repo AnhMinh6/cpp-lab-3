@@ -1,8 +1,7 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-
-int func( const int n, int massa[], int i = 0, int sum_1 = 0, int sum_2 = 0)
+int func( int n, int massa[], int i = 0, long int sum_1 = 0, long int sum_2 = 0)
 {
    if (i == n)
       return abs( sum_1 - sum_2 );
@@ -18,7 +17,8 @@ int func( const int n, int massa[], int i = 0, int sum_1 = 0, int sum_2 = 0)
 
 int main()
 {
-   /* const */int n; cin >> n; int plates[n]; //ввели массив
+   int n;
+   cin >> n; int plates[n];
    for (int i = 0; i < n; ++i){
       cin >> plates[i];
    }
